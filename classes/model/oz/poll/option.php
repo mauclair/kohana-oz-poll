@@ -45,4 +45,22 @@ class Model_Oz_Poll_Option extends ORM {
 		return (bool) $this->votes->where('ip', '=', $ip)->count_all();
 	}
 
+	/**
+	 * Add a new vote for this poll option from the provided IP address
+	 *
+	 * @param string $ip
+	 * @return bool
+	 */
+	public function add_vote($ip)
+	{
+		if ( ! $this->loaded())
+			return FALSE;
+
+		$vote = ORM::factory('poll_option_vote');
+		$vote->option_id = $this->id;
+		$vote->ip = $ip;
+		$vote->save();
+		return TRUE;
+	}
+
 }
