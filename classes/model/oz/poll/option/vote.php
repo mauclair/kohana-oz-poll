@@ -19,7 +19,7 @@ class Model_Oz_Poll_Option_Vote extends ORM {
 	{
 		return array(
 			'option_id' => array(array('not_empty'), array('digit')),
-			'ip'        => array(array('not_empty')),
+			'ip'        => array(array('not_empty'), array('ip')),
 		);
 	}
 
