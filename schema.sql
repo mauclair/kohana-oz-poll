@@ -3,7 +3,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE `polls` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `status` varchar(6) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'active',
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `question` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `start_date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `status` (`status`),
@@ -13,7 +13,7 @@ CREATE TABLE `polls` (
 CREATE TABLE `poll_options` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `poll_id` smallint(6) unsigned NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `question` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `poll_id` (`poll_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;

@@ -20,14 +20,14 @@ class Model_Oz_Poll extends ORM {
 			'status'     => array(
 				array('in_array', array(':value', array('active', 'closed')))
 			),
-			'name'       => array(array('not_empty')),
+			'question'   => array(array('not_empty')),
 		);
 	}
 
 	public function filters()
 	{
 		return array(
-			'name' => array(array('trim')),
+			'question' => array(array('trim')),
 		);
 	}
 
