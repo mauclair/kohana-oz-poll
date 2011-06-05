@@ -4,8 +4,10 @@
  *
  * @package openzula/kohana-oz-poll
  * @author Alex Cartwright <alex@openzula.org>
- * @copyright (C) 2011 OpenZula
+ * @copyright Copyright (c) 2011, OpenZula
+ * @license http://openzula.org/license-bsd-3c BSD 3-Clause License
  */
+
 class Model_Oz_Poll_Option_Vote extends ORM {
 
 	protected $_belongs_to = array(
